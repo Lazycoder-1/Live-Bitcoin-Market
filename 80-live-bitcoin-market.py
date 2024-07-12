@@ -1,5 +1,6 @@
 # api = 'https://api.coinmarketcap.com/v1/ticker/bitcoin/'
 import time
+import datetime
 import requests
 
 # Replace 'YOUR_API_KEY' with your actual API key from CoinMarketCap
@@ -19,10 +20,10 @@ data = res.json()
 while 1 == 1:
     API_KEY = '97655b6a-ee07-4105-82a4-b82976527a2b'
     URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
+    bt_time = datetime.datetime.now().strftime("%d, %b %Y %H:%M:%S")
     for cryptocurrency in data['data']:
         if cryptocurrency['symbol'] == 'BTC':
             bitcoin_price = cryptocurrency['quote']['USD']['price']
-            print(f"The current value of Bitcoin is: ${bitcoin_price:.2f}")
+            print('{}: {}'.format(bt_time,bitcoin_price))
             time.sleep(5)
             break
-
