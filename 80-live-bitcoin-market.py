@@ -3,7 +3,7 @@ import time
 import datetime
 import requests
 
-# Replace 'YOUR_API_KEY' with your actual API key from CoinMarketCap
+
 API_KEY = '97655b6a-ee07-4105-82a4-b82976527a2b'
 URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
@@ -16,7 +16,7 @@ headers = {
 res = requests.get(URL, headers=headers)
 data = res.json()
 
-# Extract Bitcoin data
+# Extract Bitcoin data and update the value of bitcoin in every 5 seconds
 while 1 == 1:
     API_KEY = '97655b6a-ee07-4105-82a4-b82976527a2b'
     URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
